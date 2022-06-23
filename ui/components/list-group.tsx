@@ -6,16 +6,19 @@ const listGroupProps = GetProps("ul", {
   ...UTILS_MAP,
 })
 
-function _ListGroup(props: Props<typeof listGroupProps>) {
-  return <ul {...listGroupProps(props)} />
-}
-
 const itemProps = GetProps("li", {
   default: "list-group-item",
 })
 
-function Item(props: Props<typeof itemProps>) {
-  return <li {...itemProps(props)} />
+const linkProps = GetProps("a", {
+  default: "list-group-item",
+})
+
+function _ListGroup(props: Props<typeof listGroupProps>) {
+  return <ul {...listGroupProps(props)} />
 }
 
-export const ListGroup = Object.assign(_ListGroup, { Item })
+const Item = (props: Props<typeof itemProps>) => <li {...itemProps(props)} />
+const Link = (props: Props<typeof linkProps>) => <a {...linkProps(props)} />
+
+export const ListGroup = Object.assign(_ListGroup, { Item, Link })

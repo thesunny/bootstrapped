@@ -80,7 +80,8 @@ export function GetProps<
   M extends Record<string, string>
 >(
   tag: T,
-  mappings: M
+  mappings: M,
+  classNameArg?: Parameters<typeof cx>[0]
 ): ((
   props: GetArgPropsFromTag<T> & GetArgPropsFromMap<M>
 ) => GetArgPropsFromTag<T>) & {
@@ -96,7 +97,6 @@ export function GetProps<
       classNames.push(mappings["default"])
     }
     for (const key in props) {
-      console.log(key, mappings[key], mappings)
       const className = mappings[key] as string | undefined
       if (className) {
         classNames.push(className)
@@ -105,8 +105,7 @@ export function GetProps<
         nextProps[_key] = props[key] as any // we're confident this works ;)
       }
     }
-    nextProps.className = cx(classNames, props.className)
-    // console.log(nextProps)
+    nextProps.className = cx(classNames, classNameArg, props.className)
     return nextProps
   }
   return Object.assign(getProps, { mappings })

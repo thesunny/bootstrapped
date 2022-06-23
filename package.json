@@ -4,6 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@emotion/core": "^10",
+    "@emotion/styled": "^10",
     "@thesunny/assert-type": "^0.1.7",
     "@types/jest": "^27",
     "@types/node": "^18.0.0",

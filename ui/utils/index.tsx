@@ -50,6 +50,30 @@ export const TEXT_MAP = mapping({
   ...mergeX_X($("text"), $("body", "muted", "white", ...VARIANT_LIST)),
   textBlack50: "text-black-50",
   textWhite50: "text-white-50",
+  // text transform
+  textLowercase: "text-lowercase",
+  textUppercase: "text-uppercase",
+  textCapitalize: "text-capitalize",
+  // font size
+  ...mergeX_X($("fs"), $("1", "2", "3", "4", "5", "6")),
+  // font weight and italics
+  bold: "fw-bold",
+  bolder: "fw-bolder",
+  normalWeight: "fw-normal",
+  light: "fw-light",
+  lighter: "fw-lighter",
+  italic: "fst-italic",
+  normalStyle: "fst-normal",
+  textRest: "text-reset",
+  // line height
+  lh1: "lh-1",
+  lhSm: "lh-sm",
+  lhBase: "lh-base",
+  lhLg: "lh-lg",
+  // monospace
+  monospace: "font-monospace",
+  underline: "text-decoration-underline",
+  lineThrough: "text-decoration-line-through",
 })
 
 export const UTILS_MAP = mapping({
