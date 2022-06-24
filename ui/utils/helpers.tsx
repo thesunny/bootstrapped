@@ -128,3 +128,26 @@ export const VARIANT_LIST = $(
 export function mapping<T extends Record<string, string>>(map: T) {
   return map
 }
+
+export type HeadingTagProps = {
+  h1?: true
+  h2?: true
+  h3?: true
+  h4?: true
+  h5?: true
+  h6?: true
+}
+
+export function getHeadingTag(
+  { h1, h2, h3, h4, h5, h6 }: HeadingTagProps,
+  defaultTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+) {
+  if (h1) return "h1"
+  if (h2) return "h2"
+  if (h3) return "h3"
+  if (h4) return "h4"
+  if (h5) return "h5"
+  if (h6) return "h6"
+  if (defaultTag) return defaultTag
+  throw new Error(`Need to provide a prop of h1, h2, h3, h4, h5, or h6`)
+}

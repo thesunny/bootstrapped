@@ -10,6 +10,7 @@ import {
 
 const rowProps = GetProps("div", {
   default: "row",
+  ...UTILS_MAP,
 })
 
 function Row(props: Props<typeof rowProps>) {

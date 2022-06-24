@@ -1,4 +1,6 @@
 export * from "./alert"
+export * from "./badge"
+export * from "./breadcrumb"
 export * from "./btn"
 export * from "./card"
 export * from "./list-group"

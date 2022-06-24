@@ -6,6 +6,6 @@ const alertProps = GetProps("div", {
   ...UTILS_MAP,
 })
 
-export function Alert(props: Props<typeof alertProps>) {
-  return <div {...alertProps(props)} />
-}
+export const Alert = (props: Props<typeof alertProps>) => (
+  <div {...alertProps(props)} />
+)

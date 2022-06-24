@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, ListGroup } from "~/ui"
+import { Card, Container, ListGroup } from "~/ui"
 import styled from "@emotion/styled"
 import Link from "next/link"
 
@@ -24,13 +24,42 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <div>
       <$Sidebar>
         <Container py3>
-          <ListGroup>
-            <Link href="/alerts">
-              <ListGroup.Link>Alerts</ListGroup.Link>
-            </Link>
-            <ListGroup.Link>Alerts</ListGroup.Link>
-            <ListGroup.Link>Alerts</ListGroup.Link>
-          </ListGroup>
+          <small>
+            <Card mb3>
+              <Card.Header>Components</Card.Header>
+              <ListGroup flush>
+                <Link href="/alerts">
+                  <ListGroup.Link>Alerts</ListGroup.Link>
+                </Link>
+                <Link href="/badges">
+                  <ListGroup.Link>Badges</ListGroup.Link>
+                </Link>
+                <Link href="/breadcrumbs">
+                  <ListGroup.Link>Breadcrumbs</ListGroup.Link>
+                </Link>
+                <Link href="/cards">
+                  <ListGroup.Link>Cards</ListGroup.Link>
+                </Link>
+                <Link href="/list-groups">
+                  <ListGroup.Link>List Groups</ListGroup.Link>
+                </Link>
+              </ListGroup>
+            </Card>
+            <Card mb3>
+              <Card.Header>Utilities</Card.Header>
+              <ListGroup flush>
+                <Link href="/colors">
+                  <ListGroup.Link>Colors</ListGroup.Link>
+                </Link>
+                <Link href="/cards">
+                  <ListGroup.Link>Cards</ListGroup.Link>
+                </Link>
+                <Link href="/shadows">
+                  <ListGroup.Link>Shadows</ListGroup.Link>
+                </Link>
+              </ListGroup>
+            </Card>
+          </small>
         </Container>
       </$Sidebar>
       <$Body>
